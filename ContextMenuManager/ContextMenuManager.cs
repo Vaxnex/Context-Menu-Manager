@@ -143,13 +143,21 @@ namespace ContextMenuManager
         #region Hàm chứa chức năng của button
         private void btnAdd_Click(object sender, EventArgs e)
         {
-
+            string itemSel = Convert.ToString(lbKeys.SelectedItem);
+            
+            RegistryKey createKey = key.OpenSubKey(itemSel,true);
+            if (lbKeys.SelectedItem != null)
+            {
+                createKey.CreateSubKey("ShellNew");
+                RegistryKey NewValue = createKey.OpenSubKey("ShellNew",true);      
+                NewValue.SetValue("NullFile",RegistryValueKind.String);
+            }
         } //Thêm
         private void btnDel_Click(object sender, EventArgs e)
         {
-            string itemSel = Convert.ToString(lbKeys.SelectedItem);            
+            string itemSel = Convert.ToString(lbKeys.SelectedItem);      
             RegistryKey keyDel = key.OpenSubKey(itemSel, true);
-            if (lbKeys.SelectedItem != null) {                             
+            if (lbKeys.SelectedItem != null) {                           
                 foreach (string subKeyDel in keyDel.GetSubKeyNames()) {
                     if (subKeyDel == "ShellNew") {
                         keyDel.DeleteSubKey("ShellNew");                        
