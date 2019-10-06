@@ -1,0 +1,16 @@
+C:\Users\hybab\source\repos\ContextMenuManager\bin\Release\ContextMenuManager.exe.config
+C:\Users\hybab\source\repos\ContextMenuManager\bin\Release\ContextMenuManager.exe
+C:\Users\hybab\source\repos\ContextMenuManager\bin\Release\ContextMenuManager.pdb
+C:\Users\hybab\source\repos\ContextMenuManager\bin\Release\Transitions.dll
+C:\Users\hybab\source\repos\ContextMenuManager\obj\Release\ContextMenuManager.ContextMenuManager.resources
+C:\Users\hybab\source\repos\ContextMenuManager\obj\Release\ContextMenuManager.Properties.Resources.resources
+C:\Users\hybab\source\repos\ContextMenuManager\obj\Release\ContextMenuManager.csproj.GenerateResource.cache
+C:\Users\hybab\source\repos\ContextMenuManager\obj\Release\ContextMenuManager.csproj.CoreCompileInputs.cache
+C:\Users\hybab\source\repos\ContextMenuManager\obj\Release\ContextMenuManager.csproj.CopyComplete
+C:\Users\hybab\source\repos\ContextMenuManager\obj\Release\ContextMenuManager.exe
+C:\Users\hybab\source\repos\ContextMenuManager\obj\Release\ContextMenuManager.pdb
+C:\Users\hybab\source\repos\ContextMenuManager\obj\Release\ContextMenuManager.csprojAssemblyReference.cache
+C:\Users\hybab\source\repos\ContextMenuManager\bin\Release\ContextMenuManager.exe.manifest
+C:\Users\hybab\source\repos\ContextMenuManager\bin\Release\ContextMenuManager.application
+C:\Users\hybab\source\repos\ContextMenuManager\obj\Release\ContextMenuManager.exe.manifest
+C:\Users\hybab\source\repos\ContextMenuManager\obj\Release\ContextMenuManager.application

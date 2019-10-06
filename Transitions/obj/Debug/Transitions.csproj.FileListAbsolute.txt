@@ -1,0 +1,6 @@
+C:\Users\hybab\source\repos\Transitions\bin\Debug\Transitions.dll
+C:\Users\hybab\source\repos\Transitions\bin\Debug\Transitions.pdb
+C:\Users\hybab\source\repos\Transitions\obj\Debug\Transitions.csprojAssemblyReference.cache
+C:\Users\hybab\source\repos\Transitions\obj\Debug\Transitions.csproj.CoreCompileInputs.cache
+C:\Users\hybab\source\repos\Transitions\obj\Debug\Transitions.dll
+C:\Users\hybab\source\repos\Transitions\obj\Debug\Transitions.pdb
