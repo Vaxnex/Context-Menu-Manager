@@ -29,3 +29,17 @@ C:\Users\hybab\Documents\GitHub\test\ContextMenuManager\obj\Debug\ContextMenuMan
 C:\Users\hybab\Documents\GitHub\test\ContextMenuManager\obj\Debug\ContextMenuManager.csproj.CopyComplete
 C:\Users\hybab\Documents\GitHub\test\ContextMenuManager\obj\Debug\ContextMenuManager.exe
 C:\Users\hybab\Documents\GitHub\test\ContextMenuManager\obj\Debug\ContextMenuManager.pdb
+C:\Users\P0145\Desktop\test\ContextMenuManager\bin\Debug\ContextMenuManager.exe.config
+C:\Users\P0145\Desktop\test\ContextMenuManager\obj\Debug\ContextMenuManager.exe
+C:\Users\P0145\Desktop\test\ContextMenuManager\obj\Debug\ContextMenuManager.pdb
+C:\Users\P0145\Desktop\test\ContextMenuManager\obj\Debug\ContextMenuManager.csprojResolveAssemblyReference.cache
+C:\Users\P0145\Desktop\test\ContextMenuManager\obj\Debug\ContextMenuManager.ContextMenuManager.resources
+C:\Users\P0145\Desktop\test\ContextMenuManager\obj\Debug\ContextMenuManager.Properties.Resources.resources
+C:\Users\P0145\Desktop\test\ContextMenuManager\obj\Debug\ContextMenuManager.csproj.GenerateResource.Cache
+C:\Users\P0145\Desktop\test\ContextMenuManager\bin\Debug\ContextMenuManager.exe.manifest
+C:\Users\P0145\Desktop\test\ContextMenuManager\bin\Debug\ContextMenuManager.application
+C:\Users\P0145\Desktop\test\ContextMenuManager\bin\Debug\ContextMenuManager.exe
+C:\Users\P0145\Desktop\test\ContextMenuManager\bin\Debug\ContextMenuManager.pdb
+C:\Users\P0145\Desktop\test\ContextMenuManager\bin\Debug\Transitions.dll
+C:\Users\P0145\Desktop\test\ContextMenuManager\obj\Debug\ContextMenuManager.exe.manifest
+C:\Users\P0145\Desktop\test\ContextMenuManager\obj\Debug\ContextMenuManager.application

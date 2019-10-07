@@ -17,8 +17,7 @@ namespace ContextMenuManager
 {
     public partial class ContextMenuManager : Form
     {
-        RegistryKey key = Registry.ClassesRoot; //tạo biến key chứa path Computer        \HKEY_CLASSES_ROOT\
-
+        RegistryKey key = Registry.ClassesRoot; //tạo biến key chứa path Computer\HKEY_CLASSES_ROOT\
  
         public ContextMenuManager()
         {
@@ -91,6 +90,9 @@ namespace ContextMenuManager
                 lbNum.Text = lbKeys.Items.Count.ToString();
             }// "Tất cả"
             if (rbActived.Checked) {
+                btnAdd.Enabled = false;
+                btnDel.Enabled = false;
+                btnMod.Enabled = false;
                 lbKeys.Items.Clear();
                 if (key.SubKeyCount > 0) {
                     foreach (string subKey1 in key.GetSubKeyNames()) {
@@ -112,6 +114,9 @@ namespace ContextMenuManager
                 lbNum.Text = lbKeys.Items.Count.ToString();
             }// "Đã Có"
             if (rbNone.Checked){
+                btnAdd.Enabled = false;
+                btnDel.Enabled = false;
+                btnMod.Enabled = false;
                 lbKeys.Items.Clear();                
                 if (key.SubKeyCount > 0) {
                     foreach (string subKey1 in key.GetSubKeyNames()) {
@@ -151,6 +156,14 @@ namespace ContextMenuManager
                 createKey.CreateSubKey("ShellNew");
                 RegistryKey NewValue = createKey.OpenSubKey("ShellNew",true);      
                 NewValue.SetValue("NullFile",RegistryValueKind.String);
+                foreach (string newName in createKey.GetSubKeyNames())
+                {
+                    if (newName == "ShellNew")
+                    {
+                        MessageBox.Show("Đã thêm", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        btnRestart.PerformClick();
+                    }
+                }                                
             }
         } //Thêm
         private void btnDel_Click(object sender, EventArgs e)
@@ -182,6 +195,8 @@ namespace ContextMenuManager
             if (rbActived.Checked)
             {
                 btnAdd.Enabled = false;
+                btnDel.Enabled = false;
+                btnMod.Enabled = false;
                 lbKeys.Items.Clear();
                 if (key.SubKeyCount > 0)
                 {
@@ -202,20 +217,51 @@ namespace ContextMenuManager
                     }
                 }
             }
+            if (rbNone.Checked)
+            {
+                btnAdd.Enabled = false;
+                btnDel.Enabled = false;
+                btnMod.Enabled = false;
+                lbKeys.Items.Clear();
+                if (key.SubKeyCount>0)
+                {
+                    foreach (string subkey1 in key.GetSubKeyNames())
+                    {
+                        if (regexItem.IsMatch(subkey1) && !regexNItem.IsMatch(subkey1))
+                        {
+                             RegistryKey isNullKey = key.OpenSubKey(subkey1);                            
+                            string[] _checkNull = isNullKey.GetSubKeyNames();
+                            if (_checkNull.Length == 0){
+                                lbKeys.Items.Add(subkey1);
+                            }
+                            else {
+                                foreach (string subKey2 in isNullKey.GetSubKeyNames()) {                                    
+                                    if (!isNullKey.GetSubKeyNames().Contains("ShellNew")) {
+                                        lbKeys.Items.Add(subkey1);
+                                        break;
+                                    }
+                                }
+                            } 
+                        }
+                    }
+                }
+            }
             lbNum.Text = lbKeys.Items.Count.ToString();
         }
         #endregion
         #region Hàm mở khoá button theo RadioButton
         private void lbKeys_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (rbActived.Checked)
+            if (rbActived.Checked)          
             {
                 btnDel.Enabled = true;
-                btnMod.Enabled = true;
+                btnMod.Enabled = true;                
             }
             else if (rbNone.Checked)
             {
                 btnAdd.Enabled = true;
+                btnMod.Enabled = false;
+                btnDel.Enabled = false;
             }                          
         }
         #endregion
