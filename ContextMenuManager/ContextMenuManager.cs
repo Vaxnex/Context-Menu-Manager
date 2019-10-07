@@ -184,7 +184,41 @@ namespace ContextMenuManager
         } //Xoá
         private void btnMod_Click(object sender, EventArgs e)
         {
-
+            string itemSel = Convert.ToString(lbKeys.SelectedItem);
+            RegistryKey curKey = key.OpenSubKey(itemSel,true);
+            foreach (string subKeyName in curKey.GetSubKeyNames())
+            {
+                if (subKeyName=="ShellNew")
+                {
+                    RegistryKey curValue = curKey.OpenSubKey("ShellNew", true);
+                   foreach (string nameValue in curValue.GetValueNames())
+                    {
+                        if (nameValue=="ItemName")
+                        {
+                            MessageBox.Show("show new form");
+                            KeyEdit aew = new KeyEdit();
+                            this.Hide();
+                            aew.ShowDialog();
+                            this.Show();
+                            break;
+                        }
+                        else 
+                        {
+                            DialogResult result=MessageBox.Show("Chưa có giá trị đường dẫn.\nThêm giá trị ?","Warning",MessageBoxButtons.OKCancel,MessageBoxIcon.Warning);
+                            if (result==DialogResult.OK)
+                            {
+                                
+                                
+                                curValue.SetValue("ItemName", "");
+                                MessageBox.Show(Convert.ToString(curValue));
+                            }
+                            break;
+                        }
+                    }
+                }
+                
+            }
+            
         } //Sửa
         #endregion
         #region Hàm nạp lại listbox sau khi chỉnh sửa, xoá, thêm key

@@ -43,14 +43,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="ContextMenuManager.exe" size="120320">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="ContextMenuManager.exe" size="174080">
       <assemblyIdentity name="ContextMenuManager" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>1hP7BxPuWdS3uSGcOiT2lVwOArJh+DvQ2G0HFzoXa2w=</dsig:DigestValue>
+        <dsig:DigestValue>HxFCd3ag9+15AXT2/yxq2jZGD30TKbHNZ6lAK/lrCkg=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

@@ -86,10 +86,19 @@
     <Compile Include="ContextMenuManager.Designer.cs">
       <DependentUpon>ContextMenuManager.cs</DependentUpon>
     </Compile>
+    <Compile Include="KeyEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="KeyEdit.Designer.cs">
+      <DependentUpon>KeyEdit.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="ContextMenuManager.resx">
       <DependentUpon>ContextMenuManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="KeyEdit.resx">
+      <DependentUpon>KeyEdit.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
