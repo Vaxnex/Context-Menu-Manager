@@ -12,6 +12,7 @@ namespace ContextMenuManager
 {
     public partial class KeyEdit : Form
     {
+        public static string path;
         public KeyEdit()
         {
             InitializeComponent();
@@ -30,7 +31,9 @@ namespace ContextMenuManager
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
-            string path = txtPath.Text;
+            path = txtPath.Text;
+            this.Close();
         }
+        
     }
 }

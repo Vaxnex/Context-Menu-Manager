@@ -184,6 +184,7 @@ namespace ContextMenuManager
         } //Xoá
         private void btnMod_Click(object sender, EventArgs e)
         {
+            KeyEdit kEdit = new KeyEdit();
             string itemSel = Convert.ToString(lbKeys.SelectedItem);
             RegistryKey curKey = key.OpenSubKey(itemSel,true);
             foreach (string subKeyName in curKey.GetSubKeyNames())
@@ -196,9 +197,9 @@ namespace ContextMenuManager
                         if (nameValue=="ItemName")
                         {
                             MessageBox.Show("show new form");
-                            KeyEdit aew = new KeyEdit();
+                            
                             this.Hide();
-                            aew.ShowDialog();
+                            kEdit.ShowDialog();
                             this.Show();
                             break;
                         }
@@ -207,10 +208,10 @@ namespace ContextMenuManager
                             DialogResult result=MessageBox.Show("Chưa có giá trị đường dẫn.\nThêm giá trị ?","Warning",MessageBoxButtons.OKCancel,MessageBoxIcon.Warning);
                             if (result==DialogResult.OK)
                             {
-                                
-                                
-                                curValue.SetValue("ItemName", "");
-                                MessageBox.Show(Convert.ToString(curValue));
+                                kEdit.ShowDialog();
+                                string path = KeyEdit.path;                               
+                                //curValue.SetValue("ItemName", path);
+                                MessageBox.Show(path);
                             }
                             break;
                         }
