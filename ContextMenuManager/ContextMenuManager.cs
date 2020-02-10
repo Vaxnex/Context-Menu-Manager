@@ -72,6 +72,10 @@ namespace ContextMenuManager
         #region Hàm nạp Key theo lựa chọn của RadioButton
         private void rbCheck_CheckedChanged(object sender, EventArgs e)
         {
+            lbName.Text = "";
+            btnAdd.Enabled = false;
+            btnDel.Enabled = false;
+            btnMod.Enabled = false;
             #region Biểu thức chính quy chứa kí tự lấy và không lấy
             var regexItem = new Regex(@"^\.");
             var regexNItem = new Regex(@"_");
@@ -144,12 +148,34 @@ namespace ContextMenuManager
             }// "Chưa có"            
         }
         #endregion
-        
+
         #region Hàm chứa chức năng của button
-        private void btnAdd_Click(object sender, EventArgs e)
+        private void btnNameEdit_Click(object sender, EventArgs e)
         {
             string itemSel = Convert.ToString(lbKeys.SelectedItem);
-            
+            RegistryKey createKey = key.OpenSubKey(itemSel, true);
+            string df = string.Empty;
+            if (Registry.GetValue(createKey.ToString(), df, null) == null)
+            {
+                MessageBox.Show("Test");
+               
+            }
+            else
+            {
+                string name = Registry.GetValue(createKey.ToString(), df, null).ToString();
+                RegistryKey OpenKey = key.OpenSubKey(name, true);
+                foreach (var item in createKey.GetValueNames())
+                {
+                    if (item == "FriendlyTypeName")
+                    {
+
+                    }
+                }
+            }
+        } //Sửa tên
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            string itemSel = Convert.ToString(lbKeys.SelectedItem);   
             RegistryKey createKey = key.OpenSubKey(itemSel,true);
             if (lbKeys.SelectedItem != null)
             {
@@ -197,7 +223,6 @@ namespace ContextMenuManager
                         if (nameValue=="ItemName")
                         {
                             MessageBox.Show("show new form");
-                            
                             this.Hide();
                             kEdit.ShowDialog();
                             this.Show();
@@ -284,20 +309,36 @@ namespace ContextMenuManager
             lbNum.Text = lbKeys.Items.Count.ToString();
         }
         #endregion
-        #region Hàm mở khoá button theo RadioButton
+        #region Hàm mở khoá button theo RadioButton và hiện tên extension
         private void lbKeys_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (rbActived.Checked)          
             {
+                lbName.Visible = true;
                 btnDel.Enabled = true;
-                btnMod.Enabled = true;                
+                btnMod.Enabled = false;
+                btnNameEdit.Enabled = true;
             }
             else if (rbNone.Checked)
             {
+                lbName.Visible = false;
                 btnAdd.Enabled = true;
+                btnNameEdit.Enabled = false;
                 btnMod.Enabled = false;
                 btnDel.Enabled = false;
-            }                          
+            }
+            string itemSel = Convert.ToString(lbKeys.SelectedItem);
+            RegistryKey createKey = key.OpenSubKey(itemSel, true);
+            string df = string.Empty;
+            if (Registry.GetValue(createKey.ToString(), df, null) == null)
+            {
+                lbName.Text = "Value not set (Mặc định Window)";
+                btnNameEdit.Enabled = false;
+            }
+            else
+            {
+                lbName.Text = Registry.GetValue(createKey.ToString(), df, null).ToString();
+            }
         }
         #endregion
 
@@ -314,6 +355,9 @@ namespace ContextMenuManager
             iFormWidth = 330;
             Transition.run(this, "Width", iFormWidth, new TransitionType_EaseInEaseOut(100));
         }
+
         #endregion
+
+
     }
 }

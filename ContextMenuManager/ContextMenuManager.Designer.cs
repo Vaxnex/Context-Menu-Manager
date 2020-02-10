@@ -30,6 +30,7 @@ namespace ContextMenuManager
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ContextMenuManager));
             this.btnAdd = new System.Windows.Forms.Button();
             this.rbShowall = new System.Windows.Forms.RadioButton();
@@ -43,12 +44,15 @@ namespace ContextMenuManager
             this.lbCount = new System.Windows.Forms.Label();
             this.lbNum = new System.Windows.Forms.Label();
             this.btnRestart = new System.Windows.Forms.Button();
+            this.btnNameEdit = new System.Windows.Forms.Button();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.lbName = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btnAdd
             // 
             this.btnAdd.Enabled = false;
-            this.btnAdd.Location = new System.Drawing.Point(318, 116);
+            this.btnAdd.Location = new System.Drawing.Point(318, 124);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(163, 44);
             this.btnAdd.TabIndex = 28;
@@ -85,7 +89,7 @@ namespace ContextMenuManager
             // btnDel
             // 
             this.btnDel.Enabled = false;
-            this.btnDel.Location = new System.Drawing.Point(318, 166);
+            this.btnDel.Location = new System.Drawing.Point(318, 171);
             this.btnDel.Name = "btnDel";
             this.btnDel.Size = new System.Drawing.Size(163, 44);
             this.btnDel.TabIndex = 25;
@@ -122,7 +126,7 @@ namespace ContextMenuManager
             // btnMod
             // 
             this.btnMod.Enabled = false;
-            this.btnMod.Location = new System.Drawing.Point(318, 219);
+            this.btnMod.Location = new System.Drawing.Point(318, 218);
             this.btnMod.Name = "btnMod";
             this.btnMod.Size = new System.Drawing.Size(163, 44);
             this.btnMod.TabIndex = 25;
@@ -172,16 +176,39 @@ namespace ContextMenuManager
             this.btnRestart.UseVisualStyleBackColor = true;
             this.btnRestart.Click += new System.EventHandler(this.btnRestart_Click);
             // 
+            // btnNameEdit
+            // 
+            this.btnNameEdit.Enabled = false;
+            this.btnNameEdit.Location = new System.Drawing.Point(318, 77);
+            this.btnNameEdit.Name = "btnNameEdit";
+            this.btnNameEdit.Size = new System.Drawing.Size(163, 44);
+            this.btnNameEdit.TabIndex = 28;
+            this.btnNameEdit.Text = "Sửa tên hiển thị";
+            this.btnNameEdit.UseVisualStyleBackColor = true;
+            this.btnNameEdit.Click += new System.EventHandler(this.btnNameEdit_Click);
+            // 
+            // lbName
+            // 
+            this.lbName.AutoSize = true;
+            this.lbName.Location = new System.Drawing.Point(315, 58);
+            this.lbName.Name = "lbName";
+            this.lbName.Size = new System.Drawing.Size(35, 13);
+            this.lbName.TabIndex = 32;
+            this.lbName.Text = "label1";
+            this.lbName.Visible = false;
+            // 
             // ContextMenuManager
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(314, 303);
+            this.ClientSize = new System.Drawing.Size(526, 303);
+            this.Controls.Add(this.lbName);
             this.Controls.Add(this.btnRestart);
             this.Controls.Add(this.lbNum);
             this.Controls.Add(this.lbCount);
             this.Controls.Add(this.rbNone);
+            this.Controls.Add(this.btnNameEdit);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.rbShowall);
             this.Controls.Add(this.rbActived);
@@ -216,6 +243,9 @@ namespace ContextMenuManager
         private System.Windows.Forms.Label lbCount;
         private System.Windows.Forms.Label lbNum;
         private System.Windows.Forms.Button btnRestart;
+        private System.Windows.Forms.Button btnNameEdit;
+        private System.Windows.Forms.ToolTip toolTip1;
+        private System.Windows.Forms.Label lbName;
     }
 }
 
